@@ -569,31 +569,37 @@ body {
 /* Responsive Design for Mobile */
 @media screen and (max-width: 768px) {
     .game-title {
-        font-size: 2.2rem;
+        font-size: 2rem;
         margin-bottom: 20px;
+        line-height: 1.2;
     }
     #global-ui {
-        padding: 10px;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
+        padding: 15px 15px;
+        flex-direction: row;
+        justify-content: space-between;
     }
     .stats-bar, .controls-bar {
-        justify-content: center;
+        gap: 10px;
     }
     .stat-item {
         font-size: 1rem;
         padding: 6px 12px;
+        border-width: 2px;
+    }
+    .icon {
+        font-size: 1.2rem;
     }
     .btn-icon {
         width: 40px;
         height: 40px;
         font-size: 1.2rem;
+        border-width: 2px;
     }
     .menu-card, .level-btn {
         width: 100%;
-        max-width: 300px;
-        padding: 20px;
+        max-width: 320px;
+        padding: 15px;
+        gap: 10px;
     }
     .card-icon {
         font-size: 3.5rem;
@@ -601,25 +607,35 @@ body {
     .menu-card h2 {
         font-size: 1.5rem;
     }
+    .menu-card p, .level-btn p {
+        font-size: 1rem;
+    }
     .screen {
-        padding: 120px 15px 15px 15px;
+        padding: 80px 15px 15px 15px;
         justify-content: flex-start;
     }
     .menu-grid, .level-grid {
         padding-bottom: 30px;
         overflow-y: auto;
+        gap: 15px;
     }
     #game-ui-top {
-        flex-direction: column;
-        gap: 10px;
+        padding: 5px 10px;
+    }
+    #game-score, #game-timer {
+        font-size: 1rem;
+        padding: 4px 12px;
+        border-width: 2px;
     }
     #game-health-bar {
-        width: 150px;
+        width: 120px;
+        height: 15px;
+        border-width: 2px;
     }
     .memory-grid {
         width: 100%;
         max-width: 320px;
-        gap: 5px;
+        gap: 8px;
     }
     .memory-card {
         height: 70px;
@@ -627,8 +643,8 @@ body {
     }
     .find-bully-container {
         width: 100%;
-        max-width: 350px;
-        height: 300px;
+        max-width: 320px;
+        height: 250px;
     }
     .maze-grid {
         width: 100%;
@@ -637,31 +653,63 @@ body {
     }
     .drop-zone {
         width: 100%;
-        max-width: 200px;
-        min-height: 120px;
+        max-width: 160px;
+        min-height: 100px;
+        padding: 10px;
+    }
+    .drop-zone h3 {
+        font-size: 1rem;
+    }
+    .drag-items-container {
+        gap: 8px;
+    }
+    .draggable {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+    .instruction-box {
+        padding: 20px;
+        width: 90%;
     }
     .instruction-box h2 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
     .instruction-box p {
         font-size: 1rem;
+        margin-bottom: 20px;
     }
     .popup-box {
-        padding: 30px 20px;
+        padding: 25px 15px;
         width: 90%;
+    }
+    #result-title {
+        font-size: 1.8rem;
     }
     #result-stars {
         font-size: 2.5rem;
+        margin: 10px 0;
+    }
+    #result-score, #result-reward {
+        font-size: 1.2rem;
     }
     .quiz-question {
         font-size: 1.1rem;
+        padding: 15px;
     }
     .quiz-btn {
         font-size: 1rem;
         padding: 10px;
     }
     .washing-hand {
-        width: 220px;
-        height: 300px;
+        width: 200px;
+        height: 266px;
+    }
+    .bubble {
+        width: 50px;
+        height: 50px;
+        font-size: 2rem;
+    }
+    .germ {
+        font-size: 2.5rem;
     }
 }
