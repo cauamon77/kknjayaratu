@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Bermain & Belajar: Anti Bullying & Cuci Tangan</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="cloud-bg" id="cloud1">☁️</div>
+    <div class="cloud-bg" id="cloud2">☁️</div>
+    <div class="cloud-bg" id="cloud3">☁️</div>
+    <div class="cloud-bg" id="cloud4">☁️</div>
+
+    <!-- Persistent UI Overlay (Coins, Stars, Settings) -->
+    <div id="global-ui">
+        <div class="stats-bar">
+            <div class="stat-item"><span class="icon">🪙</span> <span id="coin-count">0</span></div>
+            <div class="stat-item"><span class="icon">⭐</span> <span id="star-count">0</span></div>
+        </div>
+        <div class="controls-bar">
+            <button id="btn-sound" class="btn-icon">🔊</button>
+            <button id="btn-home" class="btn-icon" style="display: none;">🏠</button>
+        </div>
+    </div>
+
+    <!-- Main Menu -->
+    <div id="screen-main-menu" class="screen active">
+        <h1 class="game-title">Belajar & Bermain!</h1>
+        <div class="menu-grid">
+            <button class="menu-card btn-anti-bullying" data-target="menu-anti-bullying">
+                <div class="card-icon">🛡️</div>
+                <h2>Edukasi Anti Bullying</h2>
+                <p>Belajar berteman dengan baik!</p>
+            </button>
+            <button class="menu-card btn-cuci-tangan" data-target="menu-cuci-tangan">
+                <div class="card-icon">🧼</div>
+                <h2>Edukasi Cuci Tangan</h2>
+                <p>Basmi kuman nakal!</p>
+            </button>
+        </div>
+    </div>
+
+    <!-- Sub Menu: Anti Bullying -->
+    <div id="screen-menu-anti-bullying" class="screen">
+        <h1>🛡️ Anti Bullying</h1>
+        <div class="level-grid" id="levels-anti-bullying">
+            <button class="level-btn" data-game="AB-1">
+                <h3>Level 1</h3>
+                <p>Pilih Kebaikan ❤️</p>
+                <div class="level-stars">☆☆☆</div>
+            </button>
+            <button class="level-btn locked" data-level="2" data-game="AB-2">
+                <h3>Level 2</h3>
+                <p>Pisahkan Sikap Baik & Buruk</p>
+                <div class="level-stars">☆☆☆</div>
+            </button>
+            <button class="level-btn locked" data-level="3" data-game="AB-3">
+                <h3>Level 3</h3>
+                <p>Hibur Teman 🫂</p>
+                <div class="level-stars">☆☆☆</div>
+            </button>
+            <button class="level-btn locked" data-level="4" data-game="AB-4">
+                <h3>Level 4</h3>
+                <p>Kuis Cerita Interaktif</p>
+                <div class="level-stars">☆☆☆</div>
+            </button>
+            <button class="level-btn locked" data-level="5" data-game="AB-5">
+                <h3>Level 5</h3>
+                <p>Labirin Persahabatan 🏃</p>
+                <div class="level-stars">☆☆☆</div>
+            </button>
+        </div>
+    </div>
+
+    <!-- Sub Menu: Cuci Tangan -->
+    <div id="screen-menu-cuci-tangan" class="screen">
+        <h1>🧼 Cuci Tangan</h1>
+        <div class="level-grid" id="levels-cuci-tangan">
+            <button class="level-btn" data-game="CT-1">
+                <h3>Level 1</h3>
+                <p>Kill The Germs (Mudah)</p>
+                <div class="level-stars">☆☆☆</div>
+            </button>
+            <button class="level-btn locked" data-level="2" data-game="CT-2">
+                <h3>Level 2</h3>
+                <p>Urutkan Langkah</p>
+                <div class="level-stars">☆☆☆</div>
+            </button>
+            <button class="level-btn locked" data-level="3" data-game="CT-3">
+                <h3>Level 3</h3>
+                <p>Kartu Ingatan 🃏</p>
+                <div class="level-stars">☆☆☆</div>
+            </button>
+            <button class="level-btn locked" data-level="4" data-game="CT-4">
+                <h3>Level 4</h3>
+                <p>Tebak yang Bersih! ✨</p>
+                <div class="level-stars">☆☆☆</div>
+            </button>
+            <button class="level-btn locked" data-level="5" data-game="CT-5">
+                <h3>Level 5</h3>
+                <p>Simulasi Cuci Tangan 🖐️</p>
+                <div class="level-stars">☆☆☆</div>
+            </button>
+        </div>
+    </div>
+
+    <!-- Game Container (where canvas or DOM games are injected) -->
+    <div id="screen-game" class="screen">
+        <!-- Game Instruction Overlay (replaces mascot pause bug) -->
+        <div id="game-instruction-overlay" class="hidden">
+            <div class="instruction-box">
+                <h2 id="instruction-title">Cara Bermain</h2>
+                <p id="instruction-text">Penjelasan game akan muncul di sini.</p>
+                <button id="btn-start-game" class="btn-action primary">Mulai Main!</button>
+            </div>
+        </div>
+
+        <div id="game-ui-top">
+            <div id="game-score">Skor: 0</div>
+            <div id="game-health-bar">
+                <div id="health-fill"></div>
+            </div>
+            <div id="game-timer">00:00</div>
+        </div>
+        <div id="game-area">
+            <!-- Canvas or DOM elements go here -->
+        </div>
+        <div id="game-ui-bottom">
+            <button id="btn-pause" class="btn-action">⏸️ Pause</button>
+        </div>
+    </div>
+
+    <!-- Game Over / Victory Screen -->
+    <div id="screen-result" class="screen popup-overlay">
+        <div class="popup-box">
+            <h1 id="result-title">Level Selesai!</h1>
+            <div id="result-stars">⭐⭐⭐</div>
+            <p id="result-score">Skor: 1500</p>
+            <p id="result-reward">+50 🪙 Koin</p>
+            <div class="popup-actions">
+                <button id="btn-retry" class="btn-action">Ulangi 🔄</button>
+                <button id="btn-next-level" class="btn-action primary">Lanjut ➡️</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/core/Storage.js"></script>
+    <script src="js/core/AudioManager.js"></script>
+    <script src="js/ui/UIManager.js"></script>
+    <script src="js/core/GameEngine.js"></script>
+    
+    <script src="js/games/AntiBullying/TapKindness.js"></script>
+    <script src="js/games/AntiBullying/CheerUp.js"></script>
+    <script src="js/games/AntiBullying/MazeGame.js"></script>
+    <script src="js/games/CuciTangan/KillGerms.js"></script>
+    <script src="js/games/CuciTangan/MemoryGame.js"></script>
+    <script src="js/games/CuciTangan/WashingSimulator.js"></script>
+    <script src="js/games/CuciTangan/SpotClean.js"></script>
+    <script src="js/games/DragDrop.js"></script>
+    <script src="js/games/QuizGame.js"></script>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
