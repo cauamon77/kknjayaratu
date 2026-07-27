@@ -565,3 +565,103 @@ body {
     60% { transform: scale(1.1); }
     100% { transform: scale(1); opacity: 1; }
 }
+
+/* Responsive Design for Mobile */
+@media screen and (max-width: 768px) {
+    .game-title {
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+    }
+    #global-ui {
+        padding: 10px;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .stats-bar, .controls-bar {
+        justify-content: center;
+    }
+    .stat-item {
+        font-size: 1rem;
+        padding: 6px 12px;
+    }
+    .btn-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    .menu-card, .level-btn {
+        width: 100%;
+        max-width: 300px;
+        padding: 20px;
+    }
+    .card-icon {
+        font-size: 3.5rem;
+    }
+    .menu-card h2 {
+        font-size: 1.5rem;
+    }
+    .screen {
+        padding: 120px 15px 15px 15px;
+        justify-content: flex-start;
+    }
+    .menu-grid, .level-grid {
+        padding-bottom: 30px;
+        overflow-y: auto;
+    }
+    #game-ui-top {
+        flex-direction: column;
+        gap: 10px;
+    }
+    #game-health-bar {
+        width: 150px;
+    }
+    .memory-grid {
+        width: 100%;
+        max-width: 320px;
+        gap: 5px;
+    }
+    .memory-card {
+        height: 70px;
+        font-size: 2rem;
+    }
+    .find-bully-container {
+        width: 100%;
+        max-width: 350px;
+        height: 300px;
+    }
+    .maze-grid {
+        width: 100%;
+        max-width: 300px;
+        height: 300px;
+    }
+    .drop-zone {
+        width: 100%;
+        max-width: 200px;
+        min-height: 120px;
+    }
+    .instruction-box h2 {
+        font-size: 1.8rem;
+    }
+    .instruction-box p {
+        font-size: 1rem;
+    }
+    .popup-box {
+        padding: 30px 20px;
+        width: 90%;
+    }
+    #result-stars {
+        font-size: 2.5rem;
+    }
+    .quiz-question {
+        font-size: 1.1rem;
+    }
+    .quiz-btn {
+        font-size: 1rem;
+        padding: 10px;
+    }
+    .washing-hand {
+        width: 220px;
+        height: 300px;
+    }
+}
